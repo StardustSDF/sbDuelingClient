@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Dueling Client (Starblast)",
+  "version": "1.0",
+  "description": "Removes input delay, including fixing void clicks. Cursor turns gray when your energy is too depleted to fire a big shot. Includes lowercase name mod.",
+  "host_permissions": ["https://starblast.io/*"],
+  "content_scripts": [
+    {
+      "matches": [
+  "https://starblast.io/",
+  "https://starblast.io/[0-9]*"
+],
+      "js": ["lib/browser-polyfill.min.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html", "scripts/customCursor.js", "crosshair.png", "depletedCrosshair.png", "scripts/scriptOne.js", "scripts/scriptTwo.js", "scripts/scriptThree.js", "scripts/scriptFour.js", "scripts/scriptFive.js"],
+      "matches": ["https://starblast.io/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
